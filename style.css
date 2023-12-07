@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+body,
+html {
+  overflow-x: clip;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+nav {
+  padding: 0.5em 3em;
+  border-radius: 2em;
+
+  text-transform: uppercase;
+  z-index: 999;
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  translate: -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+  color: white;
+  font-size: calc(1rem + 0.2vw);
+}
+
+nav:nth-of-type(2) {
+  top: -5em;
+  position: fixed;
+  background: linear-gradient(100deg, #e27751, #ffa740);
+  box-shadow: 0 0.1em 0.3em 0 rgba(0, 0, 0, 0.25);
+  transition: top 0.3s;
+}
+svg {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+}
+
+header svg:nth-of-type(1) {
+  height: 300vh;
+}
+
+svg:nth-of-type(1):not(header svg:nth-of-type(1)) {
+  height: 200vh;
+  display: none;
+}
+
+svg:nth-of-type(2) {
+  height: 150vh;
+  display: none;
+}
+
+header {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+}
