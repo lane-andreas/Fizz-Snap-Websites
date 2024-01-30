@@ -209,8 +209,9 @@ header {
     }
     > div {
       margin-top: 25vh;
-      justify-content: center;
-      align-items: center;
+    }
+    .buttons {
+      align-self: center;
     }
     & h1 {
       font-size: calc(1.5rem + 1vw);
