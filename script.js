@@ -6,9 +6,9 @@ function handleScroll() {
   const animatedDiv = document.querySelector("#pop-nav");
 
   if (isScrollDown()) {
-    animatedDiv.style.top = "2em";
+    document.documentElement.style.setProperty("--nav-top", "2em");
   } else {
-    animatedDiv.style.top = "-5em";
+    document.documentElement.style.setProperty("--nav-top", "-10em");
   }
 }
 

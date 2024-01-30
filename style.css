@@ -1,3 +1,7 @@
+:root {
+  --nav-top: -10em;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,14 +16,17 @@ body,
 html {
   overflow-x: clip;
 }
-a {
+a,
+button {
+  background-color: inherit;
+  border: inherit;
   color: inherit;
   text-decoration: inherit;
+  cursor: pointer;
 }
 nav {
   padding: 0.5em 3em;
   border-radius: 2em;
-
   text-transform: uppercase;
   z-index: 999;
   position: absolute;
@@ -29,9 +36,68 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5em;
+  gap: 10em;
   color: white;
-  font-size: calc(1rem + 0.2vw);
+  font-size: calc(1rem + 0.1vw);
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+  }
+  & img {
+    height: 2.5em;
+  }
+  .menu {
+    display: none;
+  }
+}
+nav a {
+  transition: scale 0.1s;
+}
+nav a:hover {
+  scale: 0.9;
+}
+
+#pop-nav {
+  top: var(--nav-top);
+}
+
+@media (width < 1000px) {
+  nav:not(#pop-nav) {
+    padding: 0;
+    width: 100vw;
+    height: 20vh;
+    justify-content: space-between;
+    .menu {
+      display: initial;
+      position: fixed;
+      top: 1em;
+      right: 5vw;
+      font-size: calc(1rem + 1vw);
+    }
+    .nav-links {
+      position: absolute;
+      left: 100%;
+    }
+    & img {
+      position: absolute;
+    }
+  }
+  #pop-nav {
+    position: fixed;
+    top: calc(var(--nav-top) / 2);
+    right: 5vw;
+    left: unset;
+    padding: 1em 1.5em;
+    .menu {
+      display: initial;
+      font-size: calc(1rem + 1vw);
+    }
+    .nav-links {
+      display: none;
+    }
+  }
 }
 
 nav:nth-of-type(2) {
@@ -41,30 +107,84 @@ nav:nth-of-type(2) {
   box-shadow: 0 0.1em 0.3em 0 rgba(0, 0, 0, 0.25);
   transition: top 0.3s;
 }
-svg {
+.svg-goo {
   top: 0;
   left: 0;
   position: absolute;
   width: 100vw;
   z-index: -1;
 }
-
-header svg:nth-of-type(1) {
-  height: 300vh;
-}
-
-svg:nth-of-type(1):not(header svg:nth-of-type(1)) {
-  height: 200vh;
-  display: none;
-}
-
-svg:nth-of-type(2) {
-  height: 150vh;
-  display: none;
-}
-
 header {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
   position: relative;
   min-height: 100vh;
   width: 100vw;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+  & h1 {
+    font-size: calc(2rem + 1.5vw);
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 111%;
+  }
+  p {
+    font-size: calc(1rem + 0.3vw);
+  }
+  button {
+    color: #11998e;
+    background-color: white;
+    font-size: calc(1rem + 0.2vw);
+    padding: 0.5em 1.5em;
+    border-radius: 2em;
+  }
+  .buttons {
+    display: flex;
+    gap: 1em;
+  }
+  & .svg-goo {
+    height: 90vh;
+  }
+  & #phone {
+    margin-top: 10vh;
+    height: 70vh;
+    object-fit: contain;
+  }
+  & button {
+    outline: 0px solid white;
+    outline-offset: -1px;
+    transition: outline 0.1s, outline-offset 0.1s;
+  }
+  & button:hover {
+    outline: 1px solid white;
+    outline-offset: 5px;
+  }
+}
+
+@media (width < 1000px) {
+  header {
+    padding: 0 2em;
+    flex-direction: column;
+    & .svg-goo {
+      height: 120vh;
+    }
+    > div {
+      margin-top: 25vh;
+      justify-content: center;
+      align-items: center;
+    }
+    & h1 {
+      font-size: calc(1.5rem + 1vw);
+    }
+    & #phone {
+      width: 150vw;
+      object-fit: cover;
+    }
+  }
 }
