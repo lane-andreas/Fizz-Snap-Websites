@@ -1,6 +1,9 @@
 :root {
   --nav-top: -10em;
   --slide-nav: -100%;
+  --small: calc(1rem + 0.1vw);
+  --medium: calc(1rem + 0.3vw);
+  --large: calc(2rem + 1.5vw);
 }
 
 * {
@@ -41,7 +44,7 @@ nav {
   align-items: center;
   gap: 10em;
   color: white;
-  font-size: calc(1rem + 0.1vw);
+  font-size: var(--small);
   .nav-links {
     display: flex;
     justify-content: center;
@@ -76,7 +79,6 @@ nav a:hover {
 
 @media (width < 1000px) {
   #slide-nav {
-    display: initial;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -159,13 +161,13 @@ header {
     gap: 2em;
   }
   & h1 {
-    font-size: calc(2rem + 1.5vw);
+    font-size: var(--large);
     text-transform: uppercase;
     font-weight: 700;
     line-height: 111%;
   }
   p {
-    font-size: calc(1rem + 0.3vw);
+    font-size: var(--medium);
   }
   button {
     color: #11998e;
