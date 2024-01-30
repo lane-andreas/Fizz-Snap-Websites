@@ -64,7 +64,6 @@ nav a:hover {
 
 #pop-nav {
   top: var(--nav-top);
-  top: -5em;
   position: fixed;
   background: linear-gradient(100deg, #e27751, #ffa740);
   box-shadow: 0 0.1em 0.3em 0 rgba(0, 0, 0, 0.25);
@@ -76,7 +75,7 @@ nav a:hover {
 }
 
 @media (width < 1000px) {
-  .nav-links {
+  #slide-nav {
     display: initial;
     text-transform: uppercase;
     display: flex;
@@ -117,6 +116,7 @@ nav a:hover {
       display: none;
     }
     & img {
+      margin-top: 0.4em;
       left: 7vw;
       position: absolute;
     }
