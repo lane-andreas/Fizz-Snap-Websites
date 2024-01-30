@@ -71,8 +71,13 @@ nav a:hover {
   transition: top 0.3s;
 }
 
+#slide-nav {
+  display: none;
+}
+
 @media (width < 1000px) {
   .nav-links {
+    display: initial;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
