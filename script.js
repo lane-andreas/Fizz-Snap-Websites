@@ -3,8 +3,6 @@ function isScrollDown() {
 }
 
 function handleScroll() {
-  const animatedDiv = document.querySelector("#pop-nav");
-
   if (isScrollDown()) {
     document.documentElement.style.setProperty("--nav-top", "2em");
   } else {
@@ -13,3 +11,18 @@ function handleScroll() {
 }
 
 window.addEventListener("scroll", handleScroll);
+
+document.querySelectorAll(".menu").forEach((button) => {
+  button.addEventListener("click", function () {
+    const valueRight = getComputedStyle(document.documentElement)
+      .getPropertyValue("--slide-nav")
+      .trim();
+
+    if (valueRight === "-100%") {
+      document.documentElement.style.setProperty("--slide-nav", "7vw");
+    } else {
+      document.documentElement.style.setProperty("--slide-nav", "-100%");
+    }
+    console.log("val");
+  });
+});

@@ -1,5 +1,6 @@
 :root {
   --nav-top: -10em;
+  --slide-nav: -100%;
 }
 
 * {
@@ -63,15 +64,44 @@ nav a:hover {
 
 #pop-nav {
   top: var(--nav-top);
+  top: -5em;
+  position: fixed;
+  background: linear-gradient(100deg, #e27751, #ffa740);
+  box-shadow: 0 0.1em 0.3em 0 rgba(0, 0, 0, 0.25);
+  transition: top 0.3s;
 }
 
 @media (width < 1000px) {
+  .nav-links {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: calc(1rem + 1vw);
+    padding: 1.5em 2em;
+    transition: right 0.5s;
+    position: fixed;
+    top: 5em;
+    right: var(--slide-nav);
+    flex-direction: column;
+    background: linear-gradient(100deg, #e27751, #ffa740);
+    box-shadow: 0 0.1em 0.3em 0 rgba(0, 0, 0, 0.25);
+    gap: 1.5em;
+    z-index: 100;
+    border-radius: 2em;
+  }
   nav:not(#pop-nav) {
     top: 0;
-    padding: 0;
+    padding: 1em 0;
     width: 100vw;
-    height: 20vh;
+    height: 100vh;
     justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+    > * {
+      pointer-events: all;
+    }
     .menu {
       display: initial;
       position: fixed;
@@ -79,8 +109,7 @@ nav a:hover {
       font-size: 3em;
     }
     .nav-links {
-      position: absolute;
-      left: 100%;
+      display: none;
     }
     & img {
       left: 7vw;
@@ -103,13 +132,6 @@ nav a:hover {
   }
 }
 
-nav:nth-of-type(2) {
-  top: -5em;
-  position: fixed;
-  background: linear-gradient(100deg, #e27751, #ffa740);
-  box-shadow: 0 0.1em 0.3em 0 rgba(0, 0, 0, 0.25);
-  transition: top 0.3s;
-}
 .svg-goo {
   top: 0;
   left: 0;
@@ -188,9 +210,6 @@ header {
     }
     .phone {
       margin-top: 0;
-      height: 50vh;
-      width: 100vw;
-      object-fit: contain;
     }
     & br {
       display: none;
