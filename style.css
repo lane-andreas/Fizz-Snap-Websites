@@ -729,3 +729,20 @@ footer:last-of-type {
     flex-basis: 50%;
   }
 }
+
+.policies {
+  padding: 5vh 2.5vw;
+  margin: 5vh 2.5vw;
+  border: 2px solid black;
+}
+
+.policies h1,
+.policies h2,
+.policies h3,
+.policies h4,
+.policies h5,
+.policies h6,
+.policies p,
+.policies li:last-of-type {
+  margin-bottom: 1em;
+}
