@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 let typeSplit = new SplitType(".fade", {
   types: "lines, words, chars",
   tagName: "span",
@@ -10,9 +12,23 @@ gsap.from(".fade .char", {
   ease: "power1.out",
   stagger: 0.05,
   delay: 0.5,
+});
+
+let typeSplitScroll = new SplitType(".scroll", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
+
+gsap.from(".scroll .char", {
+  scale: ".8",
+  y: "40%",
+  opacity: 0,
+  ease: "power1.out",
+  stagger: 0.05,
+  delay: 0.5,
   scrollTrigger: {
     trigger: ".scroll",
-    start: "top center",
+    start: "top 70%", // Start the animation when the top of ".fade" crosses the middle of the viewport
   },
 });
 

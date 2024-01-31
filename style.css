@@ -16,6 +16,10 @@
 ::-webkit-scrollbar {
   width: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 body,
 html {
   overflow-x: clip;
@@ -54,7 +58,7 @@ nav {
   & img {
     height: 2.5em;
   }
-  .menu {
+  .menu-button {
     display: none;
   }
 }
@@ -108,7 +112,7 @@ nav a:hover {
     > * {
       pointer-events: all;
     }
-    .menu {
+    .menu-button {
       display: initial;
       position: fixed;
       right: 7vw;
@@ -129,7 +133,7 @@ nav a:hover {
     right: -2em;
     left: unset;
     padding: 0.5em 1.5em;
-    .menu {
+    .menu-button {
       display: initial;
       font-size: 3em;
     }
@@ -165,7 +169,25 @@ header {
     text-transform: uppercase;
     font-weight: 700;
     line-height: 111%;
+    position: relative;
   }
+  /* & h1 div {
+    display: inline-block;
+    overflow-x: clip;
+    position: relative;
+    height: 0.92em;
+  }
+
+  & h1 div::before {
+    content: "";
+    position: absolute;
+    bottom: -0.2em;
+    width: 100%;
+    left: -100%;
+    height: 0.05em;
+    background-color: white;
+    animation: underline 1.5s 1.5s forwards;
+  } */
   p {
     font-size: var(--medium);
   }
@@ -199,6 +221,15 @@ header {
   }
 }
 
+@keyframes underline {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
 @media (width < 1000px) {
   header {
     gap: 5em;
@@ -228,6 +259,159 @@ header {
   }
 }
 
-section {
-  height: 100vh;
+#about {
+  padding: 15vh 5vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  & h2 {
+    color: rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--large);
+    margin-bottom: 1em;
+    display: inline;
+  }
+  & h2 .personal {
+    background: linear-gradient(255deg, #11998e 30.82%, #38ef7d 105.47%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline !important;
+  }
+
+  .window {
+    position: relative;
+    width: 50ch;
+    padding: 6ch 6ch 2ch 6ch;
+    border-radius: 2ch;
+    background: linear-gradient(94deg, #11998e 0%, #38ef7d 100%);
+    font-size: var(--medium);
+    margin-bottom: 5em;
+  }
+
+  .window p {
+    width: 38ch;
+    color: white;
+  }
+  .window div:nth-of-type(1) {
+    width: 48ch;
+    background-color: white;
+    height: 3ch;
+    position: absolute;
+    top: 1ch;
+    left: 1ch;
+    border-radius: 1ch 1ch 0 0;
+  }
+  .window div:nth-of-type(2),
+  .window div:nth-of-type(3),
+  .window div:nth-of-type(4) {
+    width: 1ch;
+    aspect-ratio: 1;
+    background-color: #38ef7d;
+    position: absolute;
+
+    border-radius: 50%;
+  }
+  .window div:nth-of-type(2) {
+    top: 2ch;
+    right: 4.5ch;
+  }
+  .window div:nth-of-type(3) {
+    top: 2ch;
+    right: 6.5ch;
+  }
+
+  .window div:nth-of-type(4) {
+    top: 2ch;
+    right: 2.5ch;
+  }
+
+  .descrips {
+    display: flex;
+    gap: 5vw;
+    font-size: var(--medium);
+  }
+  .descrip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .descrip b {
+    margin: 0.8em 0 0.3em 0;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+  }
+  .descrip p {
+    width: 30ch;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  & iconify-icon {
+    font-size: var(--large);
+  }
+}
+
+#services {
+  color: white;
+  position: relative;
+  padding: 35vh 5vw 20vh 5vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: var(--medium);
+  .svg-goo {
+    height: 100%;
+  }
+  .content {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-right: 25%;
+  }
+  & h3 {
+    font-size: var(--large);
+    font-weight: 700;
+  }
+  .terms {
+    margin-top: 5em;
+    width: 70%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .term {
+    position: relative;
+    flex-basis: 50%;
+    margin-bottom: 5em;
+  }
+  .terms b {
+    font-size: calc(var(--medium) * 1.2);
+  }
+  .terms p {
+    width: 23ch;
+    margin-top: 0.5em;
+  }
+  & iconify-icon {
+    font-size: var(--large);
+    position: absolute;
+    top: -10%;
+    right: 103%;
+    outline: 0.1em solid white;
+    outline-offset: -0.15em;
+    border-radius: 1em;
+  }
+}
+
+#portfolio {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
