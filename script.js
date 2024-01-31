@@ -25,9 +25,25 @@ gsap.from(".scroll .char", {
   opacity: 0,
   ease: "power1.out",
   stagger: 0.05,
-  delay: 0.5,
   scrollTrigger: {
     trigger: ".scroll",
+    start: "top 70%", // Start the animation when the top of ".fade" crosses the middle of the viewport
+  },
+});
+
+let typeSplitScroll2 = new SplitType(".scroll2", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
+
+gsap.from(".scroll2 .char", {
+  scale: ".8",
+  y: "40%",
+  opacity: 0,
+  ease: "power1.out",
+  stagger: 0.05,
+  scrollTrigger: {
+    trigger: ".scroll2",
     start: "top 70%", // Start the animation when the top of ".fade" crosses the middle of the viewport
   },
 });

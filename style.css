@@ -188,10 +188,10 @@ header {
     background-color: white;
     animation: underline 1.5s 1.5s forwards;
   } */
-  p {
+  & p {
     font-size: var(--medium);
   }
-  button {
+  & a {
     color: #11998e;
     background-color: white;
     font-size: calc(1rem + 0.2vw);
@@ -210,12 +210,12 @@ header {
     height: 60vh;
     object-fit: contain;
   }
-  & button {
+  & a {
     outline: 0px solid white;
     outline-offset: -1px;
     transition: outline 0.1s, outline-offset 0.1s;
   }
-  & button:hover {
+  & a:hover {
     outline: 1px solid white;
     outline-offset: 5px;
   }
@@ -274,12 +274,11 @@ header {
     margin-bottom: 1em;
     display: inline;
   }
-  & h2 .personal {
+  & h2 .color {
     background: linear-gradient(255deg, #11998e 30.82%, #38ef7d 105.47%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline !important;
   }
 
   .window {
@@ -348,9 +347,10 @@ header {
   }
   .descrip p {
     width: 30ch;
-    color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.6);
   }
   & iconify-icon {
+    color: rgba(0, 0, 0, 0.8);
     font-size: var(--large);
   }
 }
@@ -409,9 +409,323 @@ header {
 }
 
 #portfolio {
+  padding: 20vh 5vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: var(--medium);
+  & h4 {
+    color: rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--large);
+    margin-bottom: 0.5em;
+    display: inline;
+  }
+  & h4 .color {
+    background: linear-gradient(255deg, #11998e 30.82%, #38ef7d 105.47%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  > p {
+    width: 30ch;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 4em;
+  }
+  .works {
+    font-size: var(--small);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7%;
+  }
+  .work {
+    border-radius: 1em 1em 0 0;
+    position: relative;
+    padding: 0.5em 2em 2em 2em;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    box-shadow: 0 0 2em rgba(0, 0, 0, 0.25);
+  }
+  & img {
+    width: 100%;
+  }
+  .work b {
+    font-style: normal;
+  }
+  .work p:nth-of-type(1) {
+    font-size: calc(var(--small) * 0.85);
+  }
+  .work p {
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 1.5em;
+  }
+  & a {
+    text-transform: uppercase;
+    border-radius: 0.3em;
+    color: white;
+    text-align: center;
+    width: 60%;
+    align-self: center;
+    padding: 0.5em 1em;
+    outline-offset: -1px;
+    transition: outline 0.1s, outline-offset 0.1s;
+  }
+  & a:hover {
+    outline-offset: 5px;
+  }
+
+  .work:nth-of-type(1) a {
+    background: linear-gradient(269deg, #11998e -450.61%, #38ef7d 100%);
+    outline: 0px solid #34e77e;
+  }
+  .work:nth-of-type(1) a:hover {
+    outline: 1px solid #34e77e;
+  }
+  .work:nth-of-type(2) a {
+    background: linear-gradient(269deg, #11998e -222.15%, #38ef7d 325.67%);
+    outline: 0px solid #24c485;
+  }
+  .work:nth-of-type(2) a:hover {
+    outline: 1px solid #24c485;
+  }
+  .work:nth-of-type(3) a {
+    background: linear-gradient(269deg, #11998e 0%, #38ef7d 550.87%);
+    outline: 0px solid #14a18c;
+  }
+  .work:nth-of-type(3) a:hover {
+    outline: 1px solid #14a18c;
+  }
+  .bottom-border {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0.5em;
+    border-radius: 0px 0px 1em 1em;
+  }
+  .work:nth-of-type(1) .bottom-border {
+    background: linear-gradient(270deg, #11998e -232.93%, #38ef7d 100%);
+  }
+  .work:nth-of-type(2) .bottom-border {
+    background: linear-gradient(270deg, #11998e -116.14%, #38ef7d 219.81%);
+  }
+  .work:nth-of-type(3) .bottom-border {
+    background: linear-gradient(270deg, #11998e 0%, #38ef7d 334.51%);
+  }
+}
+
+#deals {
+  position: relative;
+  padding: 20vh 5vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--medium);
+  & h5 {
+    color: rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--large);
+    margin-bottom: 0.2em;
+    margin-top: 1em;
+    display: inline;
+    background-color: white;
+    width: 45%;
+    text-align: center;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+  & h5 .color {
+    background: linear-gradient(255deg, #11998e 30.82%, #38ef7d 105.47%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .svg-goo {
+    height: 100%;
+  }
+  .content {
+    background-color: white;
+    border-radius: 0 0 1.5rem 1.5rem;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5em 0;
+  }
+  .content > p:nth-of-type(1) {
+    font-weight: 700;
+    font-size: calc(var(--small));
+    margin-bottom: 0.3em;
+  }
+  .content > p:nth-of-type(2) {
+    font-weight: 700;
+    font-size: calc(var(--large) * 0.8);
+    margin-bottom: 0.5em;
+  }
+  .content > p:nth-of-type(2) span {
+    font-weight: 700;
+    font-size: calc(var(--large) * 0.5);
+  }
+  .terms {
+    translate: 2em;
+    margin-bottom: 1em;
+  }
+  .term {
+    margin-bottom: 0.8em;
+    position: relative;
+    display: flex;
+    align-self: flex-start;
+  }
+  & iconify-icon {
+    font-size: calc(var(--medium) * 1.4);
+    position: absolute;
+    top: 0;
+    left: -1.5em;
+    outline: 0.1em solid black;
+    outline-offset: -0.15em;
+    border-radius: 1em;
+  }
+  & .content a {
+    font-size: var(--small);
+    text-transform: uppercase;
+    border-radius: 0.3em;
+    color: white;
+    text-align: center;
+    width: 17ch;
+    align-self: center;
+    padding: 0.5em 0;
+    outline-offset: -1px;
+    transition: outline 0.1s, outline-offset 0.1s;
+    background: linear-gradient(269deg, #11998e -222.15%, #38ef7d 325.67%);
+    outline: 0px solid #24c485;
+  }
+  & .content a:hover {
+    outline-offset: 5px;
+    outline: 1px solid #24c485;
+  }
+  .tag {
+    margin-top: 1em;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 3em;
+  }
+  .tag a {
+    margin-left: 1.5em;
+    font-size: var(--small);
+    font-weight: 400;
+    color: white;
+    position: relative;
+    display: inline-block;
+    overflow-x: clip;
+  }
+
+  & .tag a::before {
+    content: "";
+    position: absolute;
+    bottom: -0.1em;
+    width: 100%;
+    left: -100%;
+    height: 0.05em;
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  & .tag a:hover::before {
+    left: 0;
+  }
+}
+footer:first-of-type {
+  padding: 20vh 3vw 4vw 3vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: var(--small);
+  > div {
+    flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  > div:first-of-type p {
+    font-size: calc(var(--small) * 0.85);
+    margin-bottom: 1em;
+  }
+  & form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 22ch;
+  }
+  & input {
+    border-radius: 2em;
+    padding: 0.7em 1.3em;
+    border: none;
+    box-shadow: 0px 0.2em 0.5em rgba(0, 0, 0, 0.25) inset;
+    width: 100%;
+  }
+
+  & button {
+    margin-top: 0.7em;
+    color: white;
+    background: linear-gradient(95deg, #e27751 0%, #ffa740 100%);
+    padding: 0.7em 1.3em;
+    border-radius: 2em;
+    outline: 0px solid #ef8d49;
+    outline-offset: -1px;
+    transition: outline 0.1s, outline-offset 0.1s;
+  }
+  & button:hover {
+    outline: 1px solid #ef8d49;
+    outline-offset: 5px;
+  }
+  .list {
+    position: relative;
+    gap: 0.4em;
+    padding: 0 0 0 3em;
+  }
+  .list :not(p:first-of-type) {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .list p:first-of-type {
+    margin-bottom: 1em;
+  }
+  .list::before {
+    content: "";
+    width: 80%;
+    height: 0.05em;
+    position: absolute;
+    top: 2.25em;
+    left: 1.5em;
+    background: linear-gradient(to right, #e27751, #ffa740);
+  }
+}
+
+footer:last-of-type {
+  display: flex;
+
+  align-items: center;
+  font-size: var(--small);
+  background: linear-gradient(90deg, #e27751 -0.69%, #ffa740 99.21%);
+  box-shadow: 0px 4px 31.2px 0px rgba(0, 0, 0, 0.25) inset;
+  width: 100vw;
+  height: 4em;
+  color: white;
+  > * {
+    text-align: center;
+    flex-basis: 50%;
+  }
 }
